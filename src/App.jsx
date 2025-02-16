@@ -18,7 +18,8 @@ function App() {
     <div className='grid-container'>
       <Header OpenSidebar={OpenSidebar}/>
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
-      <PodcastDetails />
+      {/* <PodcastDetails /> */}
+       <User />
     </div>
   )
 }

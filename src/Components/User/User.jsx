@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios'
+import './User.css'
+
 const User = () => {
   const [data, setData] = useState([]);
   const [podcastData, setPodcastdata] = useState([]);
@@ -28,17 +30,15 @@ const User = () => {
 
     , []);
 
-    console.log(data);
-    console.log(podcastData);
-    function CountPodcast(userId) {
-      const totalPodcast = podcastData.reduce((total, item) => {
-        if (item.userId === userId) {
-          return total + 1; // Increment count if userId matches
-        }
-        return total;
-      }, 0);
-      return totalPodcast;
-    }
+  function CountPodcast(userId) {
+    const totalPodcast = podcastData.reduce((total, item) => {
+      if (item.userId === userId) {
+        return total + 1; // Increment count if userId matches
+      }
+      return total;
+    }, 0);
+    return totalPodcast;
+  }
 
   return (
     <div className="overflow-x-auto w-full p-4">
@@ -49,6 +49,8 @@ const User = () => {
             <th className="px-5 py-2 text-left">Name</th>
             <th className="px-5 py-2 text-left">Email</th>
             <th className="px-5 py-2 text-left">Uploaded Podcast</th>
+            <th className="px-5 py-2 text-left">Actions</th>
+
 
           </tr>
         </thead>
@@ -62,11 +64,15 @@ const User = () => {
               <td className="px-5 py-2">{row.name}</td>
               <td className="px-5 py-2">{row.email}</td>
               <td className="px-5 py-2">{CountPodcast(row._id)}</td>
+              <td className='btn-col'>
+                <button className='del-btn'>
+                  <i class="fa-solid fa-trash"></i>
+                </button></td>
             </tr>
           ))}
         </tbody>
       </table>
-    </div>
+    </div >
   );
 };
 
