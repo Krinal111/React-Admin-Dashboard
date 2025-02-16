@@ -4,6 +4,7 @@ import
 {BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, 
   BsListCheck, BsMenuButtonWideFill, BsFillGearFill}
  from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 
 function Sidebar({openSidebarToggle, OpenSidebar}) {
   return (
@@ -17,35 +18,35 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
 
         <ul className='sidebar-list'>
             <li className='sidebar-list-item'>
-                <a href="">
+                <Link to="/">
                     <BsGrid1X2Fill className='icon'/> Dashboard
-                </a>
+                </Link>
             </li>
             <li className='sidebar-list-item'>
-                <a href="">
+                <Link to="/podcast">
                     <BsFillArchiveFill className='icon'/> Podcast
-                </a>
+                </Link>
             </li>
             <li className='sidebar-list-item'>
-                <a href="">
+                <Link to="">
                     <BsFillGrid3X3GapFill className='icon'/> Categories
-                </a>
+                </Link>
             </li>
             <li className='sidebar-list-item'>
-                <a href="">
+                <Link to="/user">
                     <BsPeopleFill className='icon'/> Users
-                </a>
+                </Link>
             </li>
             
             <li className='sidebar-list-item'>
-                <a href="">
+                <Link to="">
                     <BsMenuButtonWideFill className='icon'/> Reports
-                </a>
+                </Link>
             </li>
             <li className='sidebar-list-item'>
-                <a href="">
+                <Link to="">
                     <BsFillGearFill className='icon'/> Setting
-                </a>
+                </Link>
             </li>
         </ul>
     </aside>
